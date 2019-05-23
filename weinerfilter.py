@@ -18,6 +18,8 @@ import scipy.io as io
 
 def weinerfilter(noise, unfiltered,fixedfreq,exponent): #fixedfreq is a value where the amplitude is taken. Recomended 3000. exponent is recomended 2
 
+  unfiltered=np.array(unfiltered)
+  noise=np.array(noise)
   
 
     #We take the fourier transform of both the signal and the noise
@@ -37,6 +39,6 @@ def weinerfilter(noise, unfiltered,fixedfreq,exponent): #fixedfreq is a value wh
     #Finally we inverse fourier transorm to get a filtered signal. The ifft may
     #sometimes leave small amounts of imaginary components due to rounding error,
     #this is taken out by taking the real portion.
-    filtered=np.real(fft.ifft(fil_fourier))
+    filtered=(np.real(fft.ifft(fil_fourier))).tolist()
 
     return filtered
