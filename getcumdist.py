@@ -8,7 +8,7 @@
 import numpy as np
 
 def getcumdist(data):
-    data=data.tolist()
+    data = np.array(data)
     #Python sorting works with the > operator so we need to remove all nans.
     if np.isnan(data).sum()>0:
         data=data[~np.isnan(data)]
@@ -24,5 +24,8 @@ def getcumdist(data):
     data.reverse()
     histx=np.array(data)
     histy=(np.arange(1,0,-1/len(histx)))
+    
+    histx = histx.tolist()
+    histy = histy.tolist()
     return [histx,histy]
 
