@@ -25,7 +25,7 @@ def getcumdist(data):
     histx=np.array(data)
     histy=(np.arange(1,0,-1/len(histx)))
     
-    histx = histx.tolist()
-    histy = histy.tolist()
+    histx.tolist()
+    histy.tolist()
     return [histx,histy]
 
