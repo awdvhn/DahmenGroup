@@ -14,7 +14,7 @@ import numpy as np
 
 
 
-def get_slips(data, time, threshhold, mindrop):
+def get_slips(data, time, threshhold, mindrop, shapes):
 
     #The factor of -1 is so that we deal with positive numbers
     #for drop rates, it's not strictly neccessary but makes things nicer.
@@ -52,19 +52,19 @@ def get_slips(data, time, threshhold, mindrop):
     #Finally we use these indices to get the durations and sizes of the events
     slip_durations= time[index_av_ends]-time[index_av_begins]
     slip_sizes=-smoothed[index_av_begins]+smoothed[index_av_ends]-diff_avg*slip_durations*int(threshhold!=-1)#we subtract off the average if using a threshhold
-    
-    slip_sizes.tolist()
-    slip_durations.tolist()
-    
-    return [slip_sizes,slip_durations]
+    time_begins = time[index_av_begins]
+    time_ends = time[index_av_ends]
+    if shapes==1:
+        velocity = []
+        times = []
+        time2=0.5*(time[0:len(time)-1]+time[1:len(time)])
+
+        for k in range(len(slip_sizes)):
+            mask=range(index_av_begins[k],index_av_ends[k])
+            velocity.append(deriv[mask].tolist())
+            times.append((time2[mask]-time2[mask[0]]).tolist())
+        return [velocity,times,slip_sizes,slip_durations]
+    else:
+        return [slip_sizes, slip_durations]
 
 
-
-
-
-
-
-
-
-    
-    
