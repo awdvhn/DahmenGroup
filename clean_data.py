@@ -18,7 +18,7 @@ def clean_data(data):
         data=data[~np.isinf(data)]
     if (data<=0).sum()>0:
         data=data[data>0]        
-    data = data.tolist()
+    data.tolist()
 
     return data
 
