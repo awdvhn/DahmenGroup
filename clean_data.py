@@ -11,13 +11,14 @@
 import numpy as np
 
 def clean_data(data):
+    data = np.array(data)
     if np.isnan(data).sum()>0:
         data=data[~np.isnan(data)]
     if np.isinf(data).sum()>0:
         data=data[~np.isinf(data)]
     if (data<=0).sum()>0:
         data=data[data>0]        
-
+    data = data.tolist()
 
     return data
 
