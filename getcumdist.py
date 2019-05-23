@@ -1,5 +1,5 @@
 #Alan Long 6/10/16
-#Last edited: Alan Long 2/26/19
+#Last edited: Alan Long 5/23/19
 
 #This code takes data and returns it's complementary cumulative distribution
 #function (CCDF). It accepts a list data and returns two lists histx and
