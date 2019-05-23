@@ -2,7 +2,7 @@
 #Last edited: Alan Long 2/26/19
 
 #This code takes data and returns it's complementary cumulative distribution
-#function (CCDF). It accepts an array data and returns two arrays histx and
+#function (CCDF). It accepts a list data and returns two lists histx and
 #histy, the x and y values for the ccdf.
 
 import numpy as np
