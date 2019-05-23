@@ -5,7 +5,7 @@
 #numbers. It accepts an array and outputs an array of the same length.
 
 
-
+# hi mayisha
 
 
 import numpy as np
