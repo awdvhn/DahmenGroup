@@ -53,7 +53,8 @@ def get_slips(data, time, threshhold, mindrop):
     slip_durations= time[index_av_ends]-time[index_av_begins]
     slip_sizes=-smoothed[index_av_begins]+smoothed[index_av_ends]-diff_avg*slip_durations*int(threshhold!=-1)#we subtract off the average if using a threshhold
     
-    
+    slip_sizes.tolist()
+    slip_durations.tolist()
     
     return [slip_sizes,slip_durations]
 
