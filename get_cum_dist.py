@@ -8,7 +8,6 @@
 import numpy as np
 
 def getcumdist(data):
-    data = np.array(data)
     #Python sorting works with the > operator so we need to remove all nans.
     if np.isnan(data).sum()>0:
         data=data[~np.isnan(data)]
@@ -24,6 +23,12 @@ def getcumdist(data):
     data.reverse()
     histx=np.array(data)
     histy=(np.arange(1,0,-1/len(histx)))
+    
+    #Gabe found the bug that the same repeated value will return multiple
+    #probabilities. This loop fixes that
+    for i in range(1,np.size(histx)):
+        if histx[i]==histx[i-1]:
+            histy[i]=histy[i-1]
     
     histx.tolist()
     histy.tolist()
