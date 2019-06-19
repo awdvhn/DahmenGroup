@@ -8,6 +8,10 @@
 
 #This code is based on Aya's Matlab code
 
+#Note of caution: There is a known issue with the first and last few points of the filtered results. 
+#If you plot them over the original data, you may notice some curled up or curled down edges
+#Usually, we include some extra points out side our region of interest 
+#and just trim of the first and last 200 points after filtering. 
 
 #import necessary modules
 import numpy as np
