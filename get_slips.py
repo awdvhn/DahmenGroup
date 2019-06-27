@@ -63,8 +63,8 @@ def get_slips(data, time, threshhold, mindrop, shapes):
             mask=range(index_av_begins[k],index_av_ends[k])
             velocity.append(deriv[mask].tolist())
             times.append((time2[mask]-time2[mask[0]]).tolist())
-        return [velocity,times,slip_sizes,slip_durations]
+        return [velocity,times,slip_sizes.tolist(),slip_durations.tolist()]
     else:
-        return [slip_sizes, slip_durations]
+        return [slip_sizes.tolist(), slip_durations.tolist()]
 
 
