@@ -22,7 +22,7 @@ def getcumdist(data):
     data[data.index(0):]=[]
     data.reverse()
     histx=np.array(data)
-    histy=(np.arange(1,0,-1/len(histx)))
+    histy=(np.arange(1,0,-1.0/len(histx)))#Tyler just changed 1 to 1.0 
     
     #Gabe found the bug that the same repeated value will return multiple
     #probabilities. This loop fixes that
