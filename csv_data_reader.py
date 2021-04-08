@@ -1,6 +1,8 @@
 #Alan Long 6/5/18
 #Last edited 6/6/18
 
+#DONT USE THIS CODE ON THE TEST DATA, THIS IS FOR WENDY DATA
+
 #This code reads all csv files in a folder and makes them into numpy arrays. It
 #takes as an input a string folder which is the folder name and a string system
 #which is what kind of os you have, 'PC' or 'Mac'. It outputs a list of numpy arrays
